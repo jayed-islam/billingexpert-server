@@ -109,15 +109,8 @@ const run = async () => {
         })
 
 
-        // get bill all 
 
-        app.get('/api/billing-list', async (req, res) => {
-            const result = await billCollection.find().toArray()
-            res.send(result)
-        })
-
-
-        // all bill for pagination
+        // all bill and pagination
 
         app.get('/api/billing-list', async (req, res) => {
             const page = parseInt(req.query.page);
@@ -154,6 +147,11 @@ const run = async () => {
             res.send(result)
         })
 
+
+        app.get('/api/billing-listt', async (req, res) => {
+            const result = await billCollection.find().toArray()
+            res.send(result)
+        })
 
 
 
